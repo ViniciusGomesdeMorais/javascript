@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            background-color: rgb(82, 82, 138);
+            color: white;
+            font: normal 20pt Arial;
+            text-align: center;
+            
+        }
+        h1 {
+            color: rgb(253, 253, 4);
+        
+        }
+        input {
+            font: normal 20 pt Arial;
+            width: 100px;
+            height: 30px;
+        }
+        h3 {
+            color:rgb(12, 200, 72)
+        }
+        h4 {
+            color: red;
+        }
+        strong {
+            color: rgb(254, 99, 4);
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <h1>Nacionalidade</h1>
+     <h3>Pesquisa com moradores do Brasil.</h3>
+     Em que país você nasceu? <input type="string" name="txt" id="txt"> 
+    <input type="button" value="Verificar" onclick="confirmar()">
+    <div id="res">
+
+<script>
+    
+
+     function confirmar() {
+        var txt = window.document.getElementById('txt')
+        var res = window.document.querySelector(`div#res`)
+        var nac =String(txt.value)
+        res.innerHTML = `<p>O país em que voce nasceu: <strong>${nac}</strong></p>`
+        if (nac== 'brasil'||nac== 'Brasil'||nac== 'BR'||nac== 'br'||nac== 'BRASIL'||nac== 'Br'
+        ||nac== 'Brazil'||nac=='BRAZIL' ||nac== 'brazil') {
+            res.innerHTML += `<p>Você é <h3>Brasileiro!</h3></p>`
+        } 
+        else {
+            res.innerHTML += `<p> Você é <h4>Estrangeiro!<h4></p>`
+        }
+
+     }
+
+
+
+
+
+</script>
+
+</body>
+</html>
